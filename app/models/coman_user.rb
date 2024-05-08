@@ -1,2 +1,0 @@
-class ComanUser < ApplicationRecord
-end

@@ -1,2 +1,0 @@
-class BrandUser < ApplicationRecord
-end

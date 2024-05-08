@@ -37,7 +37,7 @@
                 <%= ingredient.notes %>
               </td>
               <td class="px-3 py-4 text-sm text-gray-700">
-                <!-- insert "add question" button here -->
+                <!-- insert "add question" button here for coman users -->
               </td>
             </tr>
 
@@ -47,6 +47,6 @@
       </table>
     </div>
 
-    <%= render ButtonComponent.new(label: "Edit Recipe", url: edit_recipe_path(@recipe)) %>
+    <%= render ButtonComponent.new(label: "Edit Recipe", url: edit_recipe_path(@recipe)) if get_current_user.is_brand? %>
   </div>
 </div>

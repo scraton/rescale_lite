@@ -6,6 +6,6 @@
 
     <%= render @ingredient %>
 
-    <%= render ButtonComponent.new(label: "Edit Ingredient", url: edit_ingredient_path(@ingredient)) %>
+    <%= render ButtonComponent.new(label: "Edit Ingredient", url: edit_ingredient_path(@ingredient)) if get_current_user.is_brand? %>
   </div>
 </div>
