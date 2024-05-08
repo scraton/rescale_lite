@@ -1,0 +1,45 @@
+<%= form_with(model: ingredient, class: "contents") do |form| %>
+  <% if ingredient.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
+
+      <ul>
+        <% ingredient.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :recipe_id %>
+    <%= form.select :recipe_id, options_from_collection_for_select(Recipe.all, :id, :name, form.object.recipe_id), {}, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :quantity %>
+    <div>
+      <div class="mt-1 relative rounded-md shadow-sm w-48">
+        <%= form.text_field :quantity, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 pr-12 mt-2 w-full" %>
+        <div class="absolute inset-y-0 right-0 flex items-center">
+          <%= form.label :units, class: "sr-only" %>
+          <%= form.select :units, Ingredient.units.sort.collect{|v,k| [v.humanize.downcase, v] }, {}, { class: "h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-700 rounded-md" } %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, rows: 4, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline">
+    <%= render ButtonComponent.new(label: "Save") %>
+  </div>
+<% end %>

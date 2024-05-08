@@ -1,0 +1,9 @@
+<% if !@url.blank? %>
+  <%= link_to @url, class: @classnames do %>
+    <%= @label %>
+  <% end %>
+<% else %>
+  <button type="submit" class="<%= @classnames %>">
+    <%= @label %>
+  </button>
+<% end %>

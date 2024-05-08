@@ -1,0 +1,22 @@
+<div id="<%= dom_id ingredient %>" class="my-6">
+  <p class="my-2">
+    <strong class="font-medium">Name:</strong>
+    <%= link_to ingredient.name, ingredient, class: "text-blue-600" %>
+  </p>
+
+  <p class="my-2">
+    <strong class="font-medium">Quantity:</strong>
+    <%= ingredient.quantity %>
+  </p>
+
+  <p class="my-2">
+    <strong class="font-medium">Units:</strong>
+    <%= ingredient.units %>
+  </p>
+
+  <p class="my-2">
+    <strong class="font-medium">Notes:</strong>
+    <%= ingredient.notes %>
+  </p>
+
+</div>

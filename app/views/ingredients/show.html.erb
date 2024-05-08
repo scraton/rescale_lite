@@ -1,0 +1,11 @@
+<div class="">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <%= render @ingredient %>
+
+    <%= render ButtonComponent.new(label: "Edit Ingredient", url: edit_ingredient_path(@ingredient)) %>
+  </div>
+</div>

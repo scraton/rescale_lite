@@ -1,0 +1,52 @@
+<div class="">
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= @recipe.name %></h1>
+  </div>
+
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <div id="<%= dom_id @recipe %>" class="mb-12">
+      <p class="my-5">
+        <strong class="block font-medium mb-1">Time to prepare in minutes:</strong>
+        <%= @recipe.time_to_prepare_in_minutes %>
+      </p>
+
+      <table class="min-w-full w-full divide-y divide-gray-300">
+        <thead class="bg-gray-50">
+          <tr>
+            <th scope="col" class="px-3 py-3.5 pl-6 text-left text-sm font-semibold text-gray-900 w-96">Ingredient</th>
+            <th scope="col" class="px-3 py-3.5 text-right text-sm font-semibold text-gray-900 w-48">Quantity</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Notes</th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 bg-white">
+          <% @recipe.ingredients.order(quantity: :desc).each do |ingredient| %>
+            <tr>
+              <td class="py-3.5 pr-3 pl-6 w-full max-w-0 text-sm text-gray-900 sm:w-auto sm:max-w-none">
+                <%= ingredient.name %>
+              </td>
+              <td class="px-3 py-4 text-sm text-gray-900 text-right font-mono font-medium">
+                <%= number_with_precision ingredient.quantity, precision: 2 %>
+                <%= ingredient.units %>
+              </td>
+              <td class="px-3 py-4 text-sm text-gray-700">
+                <%= ingredient.notes %>
+              </td>
+              <td class="px-3 py-4 text-sm text-gray-700">
+                <!-- insert "add question" button here -->
+              </td>
+            </tr>
+
+            <!-- insert q & a rows here -->
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <%= render ButtonComponent.new(label: "Edit Recipe", url: edit_recipe_path(@recipe)) %>
+  </div>
+</div>

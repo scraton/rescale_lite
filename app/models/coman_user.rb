@@ -1,0 +1,2 @@
+class ComanUser < ApplicationRecord
+end
