@@ -53,7 +53,9 @@ Here is what the view should look like from the Coman's perspective:
 
 <img width="1426" alt="coman-view" src="https://github.com/rescale-supply/rescale_lite/assets/176393/4f9802d4-0a30-4bda-bcc0-97d5793b305d">
 
-**IMPORTANT:** a sample for the view code is located in `/app/views/recipes/_q_and_a_template.html.erb`
+**IMPORTANT:** 
+- a sample for the view code is located in `/app/views/recipes/_q_and_a_template.html.erb`
+- the SQLite DB should already have some data in it
 
 ### Task 2 - Create a ViewComponent for the question/answer feature above
 
