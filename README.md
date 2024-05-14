@@ -43,7 +43,7 @@ In this take home project, we will be adding a feature and making a new view com
 ### Task 1 - Add support for questions and answers on ingredients
 
 Here is a brief user story that describes the desired functionality:
-> A coman `User` should be able to ask a question about a specific `Ingredient` in a `Recipe`. A brand `User` should be able to provide an answer to that question. Comans can answer more than one question. 
+> A coman `User` should be able to ask a question about a specific `Ingredient` in a `Recipe`. A brand `User` should be able to provide an answer to that question. Comans can ask more than one question. 
 
 Here is what the view should look like from the Brand's perspective:
 
