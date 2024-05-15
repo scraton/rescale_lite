@@ -1,0 +1,13 @@
+<span class="inline-flex items-center <%= @classnames %>">
+  <svg class="h-4 w-4 ml-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M 3 3 L 3 12 C 3 14.749516 5.2504839 17 8 17 L 16 17 L 16 21 L 21 16 L 16 11 L 16 15 L 8 15 C 6.3315161 15 5 13.668484 5 12 L 5 3 L 3 3 z" fill="currentColor"/>
+  </svg>
+
+  <span class="mt-1">
+    Question: <span class="text-gray-900"><%= @question.content %></span>
+    <br />
+    <% if @answer.present? %>
+    Answer: <span class="text-green-600 font-medium"><%= @answer.content %></span>
+    <% end %>
+  </span>
+</span>
