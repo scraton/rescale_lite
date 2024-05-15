@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: Who is your current pepper supplier?
+
+two:
+  content: What variety of pepper will you be using?
